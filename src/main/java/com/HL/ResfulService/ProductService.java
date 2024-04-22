@@ -1,16 +1,19 @@
 package com.HL.ResfulService;
 
 import java.util.List;
+
+import com.HL.model.Customer;
 import com.HL.model.Product;
 import com.HL.model.Connection.DBCrub;
 import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.DELETE;
+
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -25,6 +28,19 @@ public class ProductService {
 		List<Product> productlist = dbCrub.GetProduct();
 		return productlist;
 	}
+
+	@GET
+	@Path("/category/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Product> getProductCateID(@PathParam("id")int id){
+		DBCrub dbCrub = new DBCrub();
+		List<Product> catelist = dbCrub.getProductCateID(id);
+		return catelist;
+	}
+	
+	
+	
+	/*
     // Phương thức DELETE để xóa một sản phẩm dựa trên ID
 	@DELETE
 	@Path("/{id}")
@@ -60,6 +76,7 @@ public class ProductService {
 				return Response.status(Response.Status.NOT_FOUND).entity("thất bại").build();
 			}
 	}
+	*/
 	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
