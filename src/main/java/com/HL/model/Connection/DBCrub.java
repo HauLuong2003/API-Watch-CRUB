@@ -209,18 +209,18 @@ public class DBCrub {
 			}
 		return category;
 	}
-   // them san pham
+
+//   // them san pham
 //   public boolean InsertProduct(Product product) throws ClassNotFoundException{
-//	   String sql = "insert into product(id,name,price,description,image) values(?,?,?,?,?)";
+//	   String sql = "CALL  AddProduct (?,?,?,?)";
 //	   try {
 //		   new Connection_SQL();	 
 //		   Connection conn = Connection_SQL.getMySQLConnection();
 //		   ps = conn.prepareStatement(sql);
-//		   ps.setInt(1, product.getId());
-//		   ps.setString(2, product.getName());
-//		   ps.setDouble(3, product.getPrice());
-//		   ps.setString(4, product.getDescription());
-//		   ps.setString(5, product.getImage());
+//		   ps.setString(1, product.getName());
+//		   ps.setDouble(2, product.getPrice());
+//		   ps.setString(3, product.getDescription());
+//		   ps.setString(4, product.getImage());
 //		   ps.executeUpdate();
 //		 }
 //	   catch(Exception e) {
@@ -231,13 +231,12 @@ public class DBCrub {
 //   }
 //   // update san pham
 //   public boolean UpdateProduct(Product product, int id) {
-//	   String sql ="UPDATE product SET name =?, price = ?, description = ?, image = ? where id =?";
+//	   String sql ="CALL UpdateProduct( ?, ?, ?, ?)";
 //	   
 //	   try {
 //		   new Connection_SQL();
 //		   Connection  conn = Connection_SQL.getMySQLConnection();
 //		   ps = conn.prepareStatement(sql);
-//		   ps.setInt(5, id);
 //		   ps.setString(1,product.getName());
 //		   ps.setDouble(2,product.getPrice());
 //		   ps.setString(3,product.getDescription());
@@ -250,7 +249,7 @@ public class DBCrub {
 //	   return true;
 //   }
 //   public void DeleteProduct(int id) {
-//	   String sql ="DELETE FROM product where id =?";
+//	   String sql ="CALL DeleteProduct(?)";
 //	   try {
 //		   new Connection_SQL();
 //		   Connection conn = Connection_SQL.getMySQLConnection();
@@ -285,5 +284,6 @@ public class DBCrub {
 			}
 		return product;
 	}
-
- }
+   }
+//
+// }
